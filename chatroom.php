@@ -8,6 +8,7 @@
  */
 
 $topic=$_GET['topic'];
+
 date_default_timezone_set('America/Los_Angeles');
 
 // Show all errors:

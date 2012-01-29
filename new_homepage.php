@@ -40,7 +40,7 @@
         </div>
         <div id="trending">
           <div id="trending_hash_line">
-            <div id="trending_hash" class="emph">#IMissTheDaysWhen</div>
+            <a href="http://chat.chirped.it/#IMissTheDaysWhen" style="text-decoration: none;" target="_blank"><div id="trending_hash" class="emph">#IMissTheDaysWhen</div></a>
             <div id="trending_next">next &gt;</div>
           </div>
           <div id="trending_view">

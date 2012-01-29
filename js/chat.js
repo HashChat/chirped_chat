@@ -1624,6 +1624,7 @@ return;
 	},
 	
 	sendMessage: function(text) {
+_gaq.push(['_trackEvent', 'Chat', 'SendMessage']);
 		text = text ? text : this.dom['inputField'].value;
 		if(!text) {
 			return;

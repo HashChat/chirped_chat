@@ -1959,7 +1959,7 @@ class AJAXChat {
 		$xml = '<users>';
 		foreach($onlineUsersData as $onlineUserData) {
                         if( $onlineUserData['userRole'] == 0) {
-                             //continue;
+                             continue;
                         }
 			$xml .= '<user';
 			$xml .= ' userID="'.$onlineUserData['userID'].'"';
