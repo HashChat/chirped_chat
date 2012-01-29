@@ -1,5 +1,7 @@
 <?php
 
+//
+
 //this fake $users array of users, holding their thumbnail url and username, is looped through and output to the page.
 $users = array();
 for($count = 0; $count < 30; $count++) { //30 is arbitrary, plenty to fill the "Active members" box displaying who is currently in this room
