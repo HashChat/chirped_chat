@@ -1,4 +1,12 @@
-<?php ob_start("ob_gzhandler"); ?>
+<?php
+date_default_timezone_set('America/Los_Angeles');
+
+// Show all errors:
+error_reporting(E_ALL);
+
+//Turn on GZIP if the server isn't configured this way.
+ob_start("ob_gzhandler");
+?>
 <!DOCTYPE html>
 <html>
 <head>
