@@ -7,6 +7,8 @@
  * @link https://blueimp.net/ajax/
  */
 
+date_default_timezone_set('America/Los_Angeles');
+
 // Show all errors:
 error_reporting(E_ALL);
 
