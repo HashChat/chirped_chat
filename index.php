@@ -15,12 +15,18 @@ require('lib/header.php');
     topic = url.substr(url.indexOf('/#') + 2, url.length);
     console.error('fetching chatroom #' + topic);
     
+    function requireJS(src) {
+      var pageJS = document.createElement('script');
+      pageJS.src = src;
+      doc.body.appendChild(pageJS);
+    }
+    
     function chatroomResponse(resp) {
       console.error('got response on ' + topic);
       doc.body.innerHTML = resp;
-      var chatroomJS = document.createElement('script');
-      chatroomJS.src = '/js/chatroom.js';
-      doc.body.appendChild(chatroomJS);
+      requireJS('http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js');
+      requireJS('/js/tweet.js');
+      requireJS('/js/chatroom.js');
     }
     
     if (topic !== 'devin') {
@@ -29,13 +35,11 @@ require('lib/header.php');
       GET('/chatroom.devin.php?topic=' + topic, chatroomResponse);
     }
   } else {
-    console.error('fetching homepage!');
+    console.error('fetching homepagea!');
     GET('/homepage.php', function(resp) {
       console.error('homepage rolling in!');
       doc.body.innerHTML = resp;
-      var homepageJS = doc.createElement('script');
-      homepageJS.src = '/js/homepage.js';
-      doc.appendChild(homepageJS);
+      requireJS('/js/homepage.js');
     });
   }
 </script>
@@ -44,10 +48,11 @@ require('lib/header.php');
 <body>
   <h1 id="message" style="margin-top:60px;"></h1>
   <script type="text/javascript">
-    if (topic = 'no-topic') {
-      d.id('message').innerText = 'loading an awesome homepage...';
+    if (topic === 'no-topic') {
+      var end = 'If you\'re reading this it probably isn\'t loading. Email Devin: devinrhode2@gmail.com';
+      d.id('message').innerText = 'loading an awesome homepage..' + end;
     } else {
-      d.id('message').innerText = 'loading an awesome chat on #' + topic;
+      d.id('message').innerText = 'loading an awesome chat on #' + topic + end;
     }
   </script>
   <!-- body needs to be replaced with.. either the chatroom or the homepage.. -->

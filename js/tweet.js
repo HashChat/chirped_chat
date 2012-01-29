@@ -28,9 +28,9 @@ String.prototype.RTs=function() {
 last_id = 0;
 
 
-function getTweets(hashtag,cb)
-{
-	 if (hashtag.length <= 16){
+function getTweets(hashtag,cb) {
+
+	if (hashtag.length <= 16){
 		var url="http://search.twitter.com/search.json?q=%23"+hashtag+"&rpp=25&since_id="+last_id+"&callback=?";
 	} else {
 		var url="http://search.twitter.com/search.json?q="+hashtag+"&rpp=25&since_id="+last_id+"&callback=?";	
