@@ -5,26 +5,33 @@ $users = array();
 for($count = 0; $count < 30; $count++) { //30 is arbitrary, plenty to fill the "Active members" box displaying who is currently in this room
   $users[$count] = array("thumbnail" => "http://thescoutapp.com/X/DevinThumbnail.jpg", "username" => "devinrhode2");
 }
+
 ?>
-</head>
-<body>
 <style type="text/css">
   #main {
     width: 980px;
     height: auto;
     margin: auto;
   }
+  #header {
+	margin-left:-10px;
+	margin-top:0px;
+	width:100%;
+	height:62px;
+	background-image:url(images/header-bg.png);		
+  }
 </style>
+<div id="header"></div>
 <div id="main">
 
 <!-- The general scheme from here on:
   left column styles, 
   left column html
-  left column js
 
   right column styles, 
   right column html
-  right column js
+  
+  js for both
  -->
   
   <style type="text/css">
@@ -51,17 +58,22 @@ for($count = 0; $count < 30; $count++) { //30 is arbitrary, plenty to fill the "
     .members { /*members of this chat room*/
       height: 300px;
     }
-    .tweets {
+    #tweets {
       height: 500px;
     }
     
     .memberThumbnail {
       border-radius: 4px;
     }
+    
+    .tweet {
+      
+    }
+    .tweet span {
+      
+    }
   </style>
   <div id="leftColumn">
-    
-    <img id="logo" src="http://foo.jpg.to/" />
     
     <div class="members leftDiv">
     
@@ -83,27 +95,9 @@ for($count = 0; $count < 30; $count++) { //30 is arbitrary, plenty to fill the "
       
     </div>
     
-    <div class="tweets leftDiv">
+    <div id="tweets" class="leftDiv">
        <span class="leftDivTitle">Tweets with #<span id="topic"></span></span>
     </div>
-    <script type="text/javascript">
-      d.id('inviteMore').onclick = function(e) {
-        //javascript etc. dadada (emailed out task)
-      };
-      window.url = window.location.href;
-      window.topic = 'devin-default';
-      function insertTweets() {
-        
-      }
-      
-      if (url.indexOf('chirped.it/#') > 0) {
-        window.topic = url.substr(url.indexOf('chirped.it/#') + 12, url.length);
-        getTweets(topic, insertTweets);
-      } else {
-        trueUrl && alert('expecting the url format chirped.it/#foo -devin');
-      }
-      d.id('topic').innerText = topic;
-    </script>
   </div> 
   
   
@@ -143,14 +137,6 @@ for($count = 0; $count < 30; $count++) { //30 is arbitrary, plenty to fill the "
       </span>
     </div>
     
-    <script type="text/javascript">
-      var titleInput = d.id('titleInput');
-      titleInput.setAttribute('value', '#'+topic);
-      d.id('go').onclick = function(e) {
-        var titleInputText = titleInput.getAttribute('value');
-        window.location.href = 'http://chirped.it/#' + titleInputText.substr(1,titleInputText.length);
-      }
-    </script>
   </div><!-- End #rightChat -->
 
 </div>

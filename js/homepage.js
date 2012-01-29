@@ -1,0 +1,1 @@
+alert('Your javascript for the homepage needs to go in homepage.js. When I GET your homepage and insert it into innerHTML, javascript is not executed. Plop it in homepage.js and I append this file, which makes it run!');

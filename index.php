@@ -14,22 +14,28 @@ require('lib/header.php');
   if (url.indexOf('/#') > 0) {
     topic = url.substr(url.indexOf('/#') + 2, url.length);
     console.error('fetching chatroom #' + topic);
+    
+    function chatroomResponse(resp) {
+      console.error('got response on ' + topic);
+      doc.body.innerHTML = resp;
+      var chatroomJS = document.createElement('script');
+      chatroomJS.src = '/js/chatroom.js';
+      doc.body.appendChild(chatroomJS);
+    }
+    
     if (topic !== 'devin') {
-      GET('/chatroom.php?topic=' + topic, function(resp) {
-        console.error('got response on ' + topic);
-        doc.body.innerHTML = resp;
-      });
+      GET('/chatroom.php?topic=' + topic, chatroomResponse);
     } else {
-      GET('/chatroom.devin.php?topic=' + topic, function(resp) {
-        console.error('got response on ');
-        doc.body.innerHTML = resp;
-      });
+      GET('/chatroom.devin.php?topic=' + topic, chatroomResponse);
     }
   } else {
     console.error('fetching homepage!');
     GET('/homepage.php', function(resp) {
       console.error('homepage rolling in!');
       doc.body.innerHTML = resp;
+      var homepageJS = doc.createElement('script');
+      homepageJS.src = '/js/homepage.js';
+      doc.appendChild(homepageJS);
     });
   }
 </script>
