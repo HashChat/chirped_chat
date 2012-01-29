@@ -22,6 +22,8 @@ require(AJAX_CHAT_PATH.'lib/custom.php');
 // Include Class libraries:
 require(AJAX_CHAT_PATH.'lib/classes.php');
 
+$_REQUEST['logout']=true;
+
 // Initialize the chat:
 $ajaxChat = new CustomAJAXChat();
   

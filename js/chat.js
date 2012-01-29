@@ -2761,6 +2761,7 @@ return;
 	},
 	
 	setActiveStyleSheet: function(title) {
+	  return; //devin
 		var i, a, main;
 		var titleFound = false;
 		for(i=0; (a = document.getElementsByTagName('link')[i]); i++) {

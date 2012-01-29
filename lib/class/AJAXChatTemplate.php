@@ -62,6 +62,10 @@ class AJAXChatTemplate {
 
 			case 'TWT':		
 				return $this->ajaxChat->htmlEncode('"'.$_REQUEST["channelName"].'"');				
+		
+			case 'CHNL':		
+				return $this->ajaxChat->htmlEncode($_REQUEST["channelName"]);				
+
 
 			case 'LANG':
 				return $this->ajaxChat->htmlEncode($this->ajaxChat->getLang($tagContent));				
@@ -197,12 +201,14 @@ class AJAXChatTemplate {
 	}
 
 	function getStyleSheetLinkTags() {
+/*
 		$styleSheets = '';
 		foreach($this->ajaxChat->getConfig('styleAvailable') as $style) {
 			$alternate = ($style == $this->ajaxChat->getConfig('styleDefault')) ? '' : 'alternate ';
 			$styleSheets .= '<link rel="'.$alternate.'stylesheet" type="text/css" href="css/'.rawurlencode($style).'.css" title="'.$this->ajaxChat->htmlEncode($style).'"/>';
 		}
 		return $styleSheets;
+*/
 	}
 
 	function getChannelOptionTags() {

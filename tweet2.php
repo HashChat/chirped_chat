@@ -7,7 +7,7 @@
 
 
 <div id="chirped">
-<div id="LoadingTweets" style="text-align: center;">LOADING POSTS:<br/><img src="/images/horizontal-loading.gif" /></div></div>
+<div id="LoadingTweets" style="text-align: center;">LOADING POSTS:<br/><img src="/img/horizontal-loading.gif" /></div></div>
 <script>
 
 function cb_func(data)
@@ -44,7 +44,7 @@ function cb_func(data)
     		});
 			jQuery("#LoadingTweets").remove();	
 }
-getTweets('facebook',cb_func);
+getTweets('IMissTheDaysWhen',cb_func);
 
 </script>
 </div>

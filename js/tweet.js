@@ -15,10 +15,24 @@ String.prototype.user=function() {
 String.prototype.hashtags=function() {
     return this.replace(/[#]+[A-Za-z0-9-_]+/g,
     function(c) {
-        var hashtag=c.replace("#","")
-        return c.link("http://www.chirped.it/room/"+hashtag);
+        var hashtag=c.replace("#",'');
+		
+		//var xxxx='<a href="javascript:parent.window.open(\'http:\/\/chat.chirped.it\/#'+hashtag+'\');"></a>';
+
+		//var hashtag=c.replace("#",xxxx);
+		
+		//c.target="_blank";
+        //return
+		 //return c.link("http://www.chirped.it/#"+hashtag);
+		 c='<a href="javascript:parent.window.open(\'http:\/\/chat.chirped.it\/#'+hashtag+'\');">#'+hashtag+'</a>';
+        return c;//("http://www.chirped.it/#"+hashtag);
+		
     });
 };
+
+
+
+
 String.prototype.RTs=function() {
     if (this.search(/^RT @/i) != -1) {
     	return (true);
@@ -26,6 +40,7 @@ String.prototype.RTs=function() {
 };
 
 last_id = 0;
+timeoutSpeed=5000;
 
 
 function get_format (xx)
@@ -49,6 +64,7 @@ function get_format (xx)
 			
 			
 			strVal = xx.text.links().user().hashtags();
+			//strVal = strVal.newlink();
 			strVal = strVal.replace(/[&]+/g,'');
 			
 			tweet=tweet+strVal;
@@ -63,7 +79,7 @@ function getTweets(hashtag,cb)
 {
 	//alert(hashtag);
 	 if (hashtag.length <= 16){
-		var url="http://search.twitter.com/search.json?q=%23"+hashtag+"&rpp=25&since_id="+last_id+"&callback=?";
+		var url="http://search.twitter.com/search.json?q=%23"+hashtag+"&rpp=4&since_id="+last_id+"&callback=?";
 	} else {
 		var url="http://search.twitter.com/search.json?q="+hashtag+"&rpp=25&since_id="+last_id+"&callback=?";	
 	}
@@ -86,7 +102,7 @@ function getTweets(hashtag,cb)
     	
 		}
 	});
-	//timeout = setTimeout(function(){getTweets(elem)},timeoutSpeed);
+	timeout = setTimeout(function(){getTweets(hashtag,cb)},timeoutSpeed);
 	return(false);
 	
 }

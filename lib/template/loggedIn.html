@@ -1,17 +1,15 @@
 <?xml version="1.0" encoding="[CONTENT_ENCODING/]"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="[LANG_CODE/]" lang="[LANG_CODE/]" dir="[BASE_DIRECTION/]">
-
 <head>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7/jquery-ui.min.js"></script>
 <script type="text/javascript" src="js/date.format.js"></script>
 <script type="text/javascript" src="js/tweet.js"></script>
-<script>
+<script type="text/javascript">
 
 
-function cb_func(data)
-{
+function cb_func(data) {
 	
 	jQuery.fn.reverse=Array.prototype.reverse;
 	
@@ -51,7 +49,7 @@ function cb_func(data)
 
 
 	<meta http-equiv="Content-Type" content="[CONTENT_TYPE/]" />
-	<title>[LANG]title[/LANG]</title>
+	<title>Chirped.it chatroom #[CHNL]keyword[/CHNL]</title>
 	<style type="text/css">
 		body {
 			padding:0;
@@ -60,7 +58,9 @@ function cb_func(data)
 #logoutChannelContainer, #statusIconContainer, #emoticonsContainer, #bbCodeContainer, #colorCodesContainer, #optionsContainer, #helpContainer, #settingsContainer { display: none }
 .userMenu { display: none }
 	</style>
-	[STYLE_SHEETS/]
+	<!-- I, removed STYLE_.. template tag. and fixed their javascript that trips up over this -Devin -->
+	<link rel="alternate stylesheet" type="text/css" href="css/prosilver.css" />
+	<link rel="stylesheet" type="text/css" href="css/devins.css" />
 	<!--[if lt IE 7]>
 		<link rel="stylesheet" type="text/css" href="css/ie5-6.css"/>
 		<script type="text/javascript">
@@ -155,7 +155,7 @@ function cb_func(data)
 <body>
 	<div id="content">
 		<div id="headlineContainer">
-			<h1>[LANG]title[/LANG]</h1>
+			<h1>Chiped.it Chat about #[CHNL]keyword[/CHNL] </h1>
 		</div>
 		<div id="logoutChannelContainer">
   			<input type="button" id="logoutButton" value="[LANG]logout[/LANG]" onclick="ajaxChat.logout();"/>
@@ -430,11 +430,12 @@ function cb_func(data)
 		//-->
 <div id="chirped">
 <div id="LoadingTweets" style="text-align: center;">LOADING POSTS:<br/><img src="img/horizontal-loading.gif" /></div>
-<script> getTweets([TWT]keyword[/TWT],cb_func);</script>
+<script> //getTweets([TWT]keyword[/TWT],cb_func);
+</script>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
 
 </div>
-		<div id="copyright"><a href="https://blueimp.net/ajax/">AJAX Chat</a> &copy; <a href="https://blueimp.net">blueimp.net</a></div>
+		<div id="copyright"><a href="https://chirped.it">Chirped.it</a> &copy; <a href="http://chirped.it">chirped.it</a></div>
 	</div>
 	<div id="flashInterfaceContainer"></div>
 </body>

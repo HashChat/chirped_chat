@@ -5,17 +5,27 @@ $con = mysql_connect('thefacephone.ce6ojopwii3x.us-east-1.rds.amazonaws.com','ch
 mysql_select_db('chirped',$con);
 
 
-$twitter_username='user'.rand(0,100000000).'';
+$twitter_username=$_REQUEST["twtusername"];//'user'.rand(0,100000000).'';
+//$twitter_username='user'.rand(0,100000000).'';
+if ( $twitter_username =='')
+	$twitter_username='user'.rand(0,100000000).'';
  
-$topic=$_GET['topic'];
+//var_dump($twitter_username);
+ 
+$topic=$_REQUEST['topic'];
+//$post_topic=$_REQUEST['roomname'];
+//if (strlen($post_topic)>0)
+//	$topic=$post_topic;
 
 $hashtag123=$topic;
-
+ 
 $_REQUEST["userName"]=$twitter_username;
 $_REQUEST["password"]="";
 $_REQUEST["channelName"]=$hashtag123;
 $_REQUEST["lang"]="en";
 $_REQUEST["submit"]="Login";
+
+
 
 //$sql = 'insert into channels (channelname) values ('.mysql_real_escape_string($src).')';
 

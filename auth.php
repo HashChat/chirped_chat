@@ -27,6 +27,11 @@ function isSignedIn()
 }
 $signinurl="";
 
+$twtusername = "";;
+$twtname = "";
+$twtprofilepic = "";
+
+
 $twitterObj = new EpiTwitter($consumer_key, $consumer_secret);
 if(isset($_SESSION['ot']) && !empty($_SESSION['ot']))
 $oauth_token = 'y';
@@ -79,9 +84,9 @@ if(isset($_POST['message']))
         
 		$twitterInfo->response;
 		
-		$username = $twitterInfo->screen_name;
-		$name = $twitterInfo->name;
-		$profilepic = $twitterInfo->profile_image_url;
+		$twtusername = $twitterInfo->screen_name;
+		$twtname = $twitterInfo->name;
+		$twtprofilepic = $twitterInfo->profile_image_url;
           
           //if( isset($_GET['room']) )
           //  include 'tweets_listing.php';

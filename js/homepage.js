@@ -1,1 +1,6 @@
-alert('Your javascript for the homepage needs to go in homepage.js. When I GET your homepage and insert it into innerHTML, javascript is not executed. Plop it in homepage.js and I append this file, which makes it run!');
+
+
+//javascript for homepage! (new_homepage.php)
+
+
+setTimeout('GET("http://chat.chirped.it/logout.php");', 1000); 

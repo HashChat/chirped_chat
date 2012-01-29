@@ -189,7 +189,7 @@ $config['logsUserAccess'] = false;
 $config['logsUserAccessChannelList'] = null;
 
 // Defines if the socket server is enabled:
-$config['socketServerEnabled'] = true;
+$config['socketServerEnabled'] = false;
 // Defines the hostname of the socket server used to connect from client side (the server hostname is used if set to null):
 $config['socketServerHost'] = null;
 // Defines the IP of the socket server used to connect from server side to broadcast update messages:

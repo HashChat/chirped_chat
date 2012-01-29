@@ -29,23 +29,34 @@
         <div id="launcher">
           <div id="launcher_search">
             <span id="giant_hash">#</span>
-            <form style="display:inline;">
-              <input type="text" class="searchbox" size="21" style='width:auto'>
+            <form style="display:inline;" method="POST" action="/" >
+              <input type="text" class="searchbox" placeholder="Chat about..." size="21" style='width:auto' name='topic'>
               <input type="submit" value="join" id="launcher_button" ></input>
+              <input type='hidden' value='<?php echo $twtusername ?>' name='twtusername' />
+              <input type='hidden' value='<?php echo $twtname ?>' name='twtname' />
+              <input type='hidden' value='<?php echo $twtprofilepic ?>' name='twtprofilepic' />
             </form>
           </div>
         </div>
         <div id="trending">
           <div id="trending_hash_line">
-            <div id="trending_hash" class="emph">#swsj</div>
+            <div id="trending_hash" class="emph">#IMissTheDaysWhen</div>
             <div id="trending_next">next &gt;</div>
           </div>
           <div id="trending_view">
-            <div id="trending_tweets"></div>
-            <form>
+            <div id="trending_tweets" style="height:270px;">
+            <iframe src="http://chat.chirped.it/tweet2.php" scrolling="no"></iframe>
+            
+            </div>
+            <form style="display:inline;" method="POST" action="/">
               <div id="trending_chirp">
                 <textarea placeholder="compose a new chirp..."
                   type='text' cols="140" rows="2" id="trending_chirp_text"></textarea>
+                  	  <input type='hidden' value="IMissTheDaysWhen" name='topic' />
+                      <input type='hidden' value='<?php echo $twtusername ?>' name='twtusername' />
+                      <input type='hidden' value='<?php echo $twtname ?>' name='twtname' />
+                      <input type='hidden' value='<?php echo $twtprofilepic ?>' name='twtprofilepic' />
+
               </div>
               <div>
                 <div id="trending_chirp_stats">
@@ -60,3 +71,7 @@
         </div>
       </div>
     </div>
+<script>
+//window.alert("BLA");
+GET("chat.chirped.it/chatroom.php?logout=true",null);
+</script>
