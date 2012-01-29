@@ -6,6 +6,19 @@ error_reporting(E_ALL);
 
 //Turn on GZIP if the server isn't configured this way.
 ob_start("ob_gzhandler");
+
+//current page url, may be localhost, may actually be chirped.it!
+function curPageURL() {
+ $pageURL = 'http';
+ if ($_SERVER["HTTPS"] == "on") {$pageURL .= "s";}
+ $pageURL .= "://";
+ if ($_SERVER["SERVER_PORT"] != "80") {
+  $pageURL .= $_SERVER["SERVER_NAME"].":".$_SERVER["SERVER_PORT"].$_SERVER["REQUEST_URI"];
+ } else {
+  $pageURL .= $_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"];
+ }
+ echo $pageURL;
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -24,37 +37,14 @@ ob_start("ob_gzhandler");
 
   <style type="text/css">
     /*reset css from yui*/
-    body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,
-    form,fieldset,input,textarea,p,blockquote,th,td{ 
-      margin:0;
-      padding:0;
-    }
-    table {
-      border-collapse:collapse;
-      border-spacing:0;
-    }
-    fieldset,img { 
-      border:0;
-    }
-    address,caption,cite,code,dfn,em,strong,th,var {
-      font-style:normal;
-      font-weight:normal;
-    }
-    ol,ul {
-      list-style:none;
-    }
-    caption,th {
-      text-align:left;
-    }
-    h1,h2,h3,h4,h5,h6 {
-      font-size:100%;
-      font-weight:normal;
-    }
-    q:before,q:after {
-      content:'';
-    }
-    abbr,acronym { border:0;
-    }
+    body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td{margin:0;padding:0;} 
+    table{border-collapse:collapse;border-spacing:0;}
+    address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:400;}
+    ol,ul{list-style:none;} caption,th{text-align:left;}
+    h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:400;}
+    q:before,q:after{content:'';} fieldset,img,abbr,acronym{border:0;}
+    
+    
     html {
       -moz-font-smoothing:antialiased !important;
       -o-font-smoothing:antialiased !important;
@@ -62,9 +52,11 @@ ob_start("ob_gzhandler");
       -ms-font-smoothing:antialiased !important;
       font-smoothing:antialiased !important;
       font-family:"Myriad Pro", "Lucida Grande","Lucida Sans Unicode",Helvetica,Arial,Verdana,sans-serif;
+      
+      background: url('images/bg-texture.png') repeat;
     }
     ::selection, ::-moz-selection, ::-webkit-selection {
-      background: #549A2F;
+      background: #ddd;
       color: white;
     }
     a {
@@ -85,8 +77,7 @@ ob_start("ob_gzhandler");
       return doc.getElementsByClassName(el);
     }
     
-    /* Gen.js: some stupid simple javascript functions
-     * Assumes you aren't using jQuery
+    /* Gen.js: some stupid simple javascript functions - github.com/devinrhode2/gen.js
      * By Devin Rhode @DevinRhode2 */
     
     /* GET Example Call:
