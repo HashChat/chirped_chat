@@ -11,6 +11,8 @@ if( $_GET['action'] == 'signout' ){
     session_destroy();
 }
 
+
+
 $twitterObj = new EpiTwitter($consumer_key, $consumer_secret);
 if(isset($_SESSION['ot']) && !empty($_SESSION['ot']))
 $oauth_token = 'y';
@@ -19,11 +21,11 @@ $oauth_token = $_GET['oauth_token'];
 	if($oauth_token == '')
   	  { 
 	  	$url = $twitterObj->getAuthorizationUrl();
-        
+        //echo $url ;
          //if( isset($_GET['room']) )
           //  include 'tweets_listing.php';
         //else
-        //    include 'home.php';
+           include 'login.php';
      } 
 	elseif( !isset($_SESSION['ot']) )
 	  {
@@ -67,6 +69,6 @@ if(isset($_POST['message']))
           //if( isset($_GET['room']) )
           //  include 'tweets_listing.php';
           //else
-          //  include 'home.php';
+            include 'login.php';
         }
 ?> 

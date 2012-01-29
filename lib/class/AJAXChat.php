@@ -1958,6 +1958,9 @@ class AJAXChat {
 		$onlineUsersData = $this->getOnlineUsersData($channelIDs);		
 		$xml = '<users>';
 		foreach($onlineUsersData as $onlineUserData) {
+                        if( $onlineUserData['userRole'] == 0) {
+                             //continue;
+                        }
 			$xml .= '<user';
 			$xml .= ' userID="'.$onlineUserData['userID'].'"';
 			$xml .= ' userRole="'.$onlineUserData['userRole'].'"';

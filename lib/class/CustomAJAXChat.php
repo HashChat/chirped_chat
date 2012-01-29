@@ -47,7 +47,12 @@ class CustomAJAXChat extends AJAXChat {
 		if($this->_channels === null) {
 			$this->_channels = array();
 			
-			$customUsers = $this->getCustomUsers();
+			//$customUsers = $this->getCustomUsers();
+			//echo "231";
+				foreach($this->getAllChannels() as $key=>$value) {
+				$this->_channels[$key] = $value;
+				}
+			return $this->_channels;
 			
 			// Get the channels, the user has access to:
 			if($this->getUserRole() == AJAX_CHAT_GUEST) {
