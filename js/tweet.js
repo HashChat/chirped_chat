@@ -42,7 +42,6 @@ String.prototype.RTs=function() {
 last_id = 0;
 timeoutSpeed=5000;
 
-
 function get_format (xx)
 {
 		
@@ -74,7 +73,6 @@ function get_format (xx)
 			   
 			return tweet;
 }
-
 
 function getTweets(hashtag,cb)
 {
