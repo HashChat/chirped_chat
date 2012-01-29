@@ -1,11 +1,8 @@
-<html>
-  <head>
+<?php include 'auth.php'; ?>
     <link rel="stylesheet" href="blueprint/screen.css" type="text/css" media="screen, projection">
     <link rel="stylesheet" href="blueprint/print.css" type="text/css" media="print">
     <!--[if lt IE 8]><link rel="stylesheet" href="/blueprint/ie.css" type="text/css" media="screen, projection"><![endif]-->
     <link rel="stylesheet" href="new_homepage.css" type="text/css" >
-  </head>
-  <body >
     <div id="header">
       <div id="header_left" ><img src="images/logo.png" /></div>
       <!--
@@ -19,7 +16,11 @@
           </div>
         </div>
       </div>
-      <div id="log_in_button">Sign Up</div>
+<?php if(isSignedIn()) { ?>
+      <a href='/auth.php?action=signout' ><div id="log_in_button">Sign Out</div></a>
+<?php } else { ?>
+      <a href='<?php echo $signinurl; ?>' ><div id="log_in_button">Sign In with Twitter</div></a>
+<?php } ?>
     </div>
 
     <div class='container' style="clear:both; padding-top: 1em;">
@@ -29,7 +30,7 @@
           <div id="launcher_search">
             <span id="giant_hash">#</span>
             <form style="display:inline;">
-              <input type="text" class="searchbox" size="21" style='width:80%'>
+              <input type="text" class="searchbox" size="21" style='width:auto'>
               <input type="submit" value="join" id="launcher_button" ></input>
             </form>
           </div>
@@ -59,5 +60,3 @@
         </div>
       </div>
     </div>
-  </body>
-</html>
