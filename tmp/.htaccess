@@ -1,0 +1,7 @@
+RewriteEngine On
+#RewriteOptions Inherit
+#RewriteBase /tmp
+#RewriteRule ^/tmp/#(.*) /tmp/request.php?tmp=$1
+RewriteBase /blah
+#RewriteRule blah\.php request.php [PT]
+#RewriteRule ^/tmp/request\.php$ blah.php

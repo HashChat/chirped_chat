@@ -1,4 +1,6 @@
-<?php session_start();
+<?php 
+
+session_start();
 
 include 'lib/EpiCurl.php';
 include 'lib/EpiOAuth.php';
@@ -9,8 +11,25 @@ if( $_GET['action'] == 'signout' ){
     unset($_SESSION['ot']);
     unset($_SESSION['ots']);
     session_destroy();
+	header('Location: http://chat.chirped.it/');
+
 }
 
+
+function isSignedIn()
+{
+
+	if( isset($_SESSION['ot']) && isset($_SESSION['ots']) )
+		return true;
+
+	return false;
+	
+}
+$signinurl="";
+
+$twtusername = "";;
+$twtname = "";
+$twtprofilepic = "";
 
 
 $twitterObj = new EpiTwitter($consumer_key, $consumer_secret);
@@ -21,11 +40,14 @@ $oauth_token = $_GET['oauth_token'];
 	if($oauth_token == '')
   	  { 
 	  	$url = $twitterObj->getAuthorizationUrl();
-        //echo $url ;
+		$signinurl=$url;
+		//echo "1234";
+		
+	    //echo $url ;
          //if( isset($_GET['room']) )
           //  include 'tweets_listing.php';
         //else
-           include 'login.php';
+           //include 'login.php';
      } 
 	elseif( !isset($_SESSION['ot']) )
 	  {
@@ -62,13 +84,16 @@ if(isset($_POST['message']))
         
 		$twitterInfo->response;
 		
-		$username = $twitterInfo->screen_name;
-		$name = $twitterInfo->name;
-		$profilepic = $twitterInfo->profile_image_url;
+		$twtusername = $twitterInfo->screen_name;
+		$twtname = $twitterInfo->name;
+		$twtprofilepic = $twitterInfo->profile_image_url;
           
           //if( isset($_GET['room']) )
           //  include 'tweets_listing.php';
           //else
-            include 'login.php';
+          //  include 'login.php';
+		 //   include 
+		 //echo "out";
+
         }
 ?> 

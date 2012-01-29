@@ -1,6 +1,4 @@
 
-</head>
-<body>
 <style type="text/css">
   /*reset css from yui*/
   body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,
@@ -121,7 +119,7 @@
   
 </script>
 <h1 id="title">Welcome to Chirpd.it!</h1>
-<h2>Go, GO NOW! &nbsp;Chat on: <a href="<?php curPageUrl(); ?>/#SWSJ">#SWSJ</a></h2>
+<h2>Go, GO NOW! &nbsp;Chat on: <a href="http://chat.chriped.it/#SWSJ">#SWSJ</a></h2>
 
 <div id="liveChats">
   <ul id="chatRoomList">

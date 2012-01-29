@@ -1036,6 +1036,7 @@ var ajaxChat = {
 
 	toggleUserMenu: function(menuID, userName, userID) {
 		// If the menu is empty, fill it with user node menu items before toggling it. 
+return;
 		var isInline = false;
 		if (menuID.indexOf('ium') >= 0 ) {
 			isInline = true;
@@ -1623,6 +1624,7 @@ var ajaxChat = {
 	},
 	
 	sendMessage: function(text) {
+_gaq.push(['_trackEvent', 'Chat', 'SendMessage']);
 		text = text ? text : this.dom['inputField'].value;
 		if(!text) {
 			return;
@@ -2760,6 +2762,7 @@ var ajaxChat = {
 	},
 	
 	setActiveStyleSheet: function(title) {
+	  return; //devin
 		var i, a, main;
 		var titleFound = false;
 		for(i=0; (a = document.getElementsByTagName('link')[i]); i++) {

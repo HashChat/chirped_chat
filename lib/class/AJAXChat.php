@@ -56,7 +56,7 @@ class AJAXChat {
 		// Initialize custom configuration settings:
 		$this->initCustomConfig();
 	}
-	
+	 
 	function initRequestVars() {
 		$this->_requestVars = array();
 		$this->_requestVars['ajax']			= isset($_REQUEST['ajax'])			? true							: false;
@@ -1958,6 +1958,9 @@ class AJAXChat {
 		$onlineUsersData = $this->getOnlineUsersData($channelIDs);		
 		$xml = '<users>';
 		foreach($onlineUsersData as $onlineUserData) {
+                        if( $onlineUserData['userRole'] == 0) {
+                             continue;
+                        }
 			$xml .= '<user';
 			$xml .= ' userID="'.$onlineUserData['userID'].'"';
 			$xml .= ' userRole="'.$onlineUserData['userRole'].'"';

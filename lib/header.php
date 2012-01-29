@@ -9,6 +9,8 @@ ob_start("ob_gzhandler");
 
 //current page url, may be localhost, may actually be chirped.it!
 function curPageURL() {
+	echo "123";
+	return;
  $pageURL = 'http';
  if ($_SERVER["HTTPS"] == "on") {$pageURL .= "s";}
  $pageURL .= "://";

@@ -136,7 +136,7 @@ $config['allowUserMessageDelete'] = true;
 // The userID used for ChatBot messages:
 $config['chatBotID'] = 2147483647;
 // The userName used for ChatBot messages
-$config['chatBotName'] = 'ChatBot';
+$config['chatBotName'] = 'Beautiful';
 
 // Minutes until a user is declared inactive (last status update) - the minimum is 2 minutes:
 $config['inactiveTimeout'] = 2;
@@ -153,9 +153,9 @@ $config['requestMessagesTimeDiff'] = 24;
 $config['requestMessagesLimit'] = 10;
 
 // Max users in chat (does not affect moderators or admins):
-$config['maxUsersLoggedIn'] = 100;
+$config['maxUsersLoggedIn'] = 1000;
 // Max userName length:
-$config['userNameMaxLength'] = 16;
+$config['userNameMaxLength'] = 26;
 // Max messageText length:
 $config['messageTextMaxLength'] = 1040;
 // Defines the max number of messages a user may send per minute:
@@ -189,7 +189,7 @@ $config['logsUserAccess'] = false;
 $config['logsUserAccessChannelList'] = null;
 
 // Defines if the socket server is enabled:
-$config['socketServerEnabled'] = true;
+$config['socketServerEnabled'] = false;
 // Defines the hostname of the socket server used to connect from client side (the server hostname is used if set to null):
 $config['socketServerHost'] = null;
 // Defines the IP of the socket server used to connect from server side to broadcast update messages:

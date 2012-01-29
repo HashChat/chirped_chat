@@ -18,7 +18,7 @@ var ajaxChatConfig = {
 	timerRate: 2000,
 	
 	// The URL to retrieve the XML chat messages (must at least contain one parameter):
-	ajaxURL: './?ajax=true',
+	ajaxURL: './chatroom.php?ajax=true',
 	// The base URL of the chat directory, used to retrieve media files (images, sound files, etc.):
 	baseURL: './',
 
