@@ -1,3 +1,11 @@
+<?php
+
+//this fake $users array of users, holding their thumbnail url and username, is looped through and output to the page.
+$users = array();
+for($count = 0; $count < 30; $count++) { //30 is arbitrary, plenty to fill the "Active members" box displaying who is currently in this room
+  $users[$count] = array("thumbnail" => "http://thescoutapp.com/X/DevinThumbnail.jpg", "username" => "devinrhode2");
+}
+?>
 </head>
 <body>
 <style type="text/css">
@@ -59,9 +67,19 @@
     
       <span class="leftDivTitle">In this chatroom <a id="inviteMore">invite more</a></span>
       <div id="memberThumbnails">
-        <span class="memberThumbnailSpan">
-          <img class="memberThumbnail" src="http://thescoutapp.com/X/DevinThumbnail.png" />
-        </span>
+        
+        <div id="">
+          <span class="memberThumbnailSpan">
+            <img class="memberThumbnail" src="http://thescoutapp.com/X/DevinThumbnail.png" />
+          </span>
+        </div>
+        
+        <div id="">
+          <span class="memberThumbnailSpan">
+            <img class="memberThumbnail" src="http://thescoutapp.com/X/DevinThumbnail.png" />
+          </span>
+        </div>        
+        
       </div>
       
     </div>
@@ -114,7 +132,7 @@
     }
     #titleInput {
       font-size: 74px;
-      width: 534px;
+      width: 530px;
       height: 100px;
     }
   </style>

@@ -14,7 +14,7 @@ require('lib/header.php');
   if (url.indexOf('/#') > 0) {
     topic = url.substr(url.indexOf('/#') + 2, url.length);
     console.error('fetching chatroom #' + topic);
-    if (topic = 'devin') {
+    if (topic !== 'devin') {
       GET('/chatroom.php?topic=' + topic, function(resp) {
         console.error('got response on ' + topic);
         doc.body.innerHTML = resp;
