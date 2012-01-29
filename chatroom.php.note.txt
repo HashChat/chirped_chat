@@ -1,0 +1,8 @@
+I don't know about authentication and everything, but ideally chatroom.php could be directly navigated to, and a chat would be available. Just like chat.chirpd.it was
+
+So we should be able to go right to chatroom.php and have a chatroom.
+
+After this is figured out, here's what's left for the chatroom to tie the frontend and the backend
+
+1. Members of chatroom
+2. Formatting formatting formatting! Fish, we'll work together on this.

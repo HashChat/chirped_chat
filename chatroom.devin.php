@@ -1,3 +1,5 @@
+</head>
+<body>
 <style type="text/css">
   #main {
     width: 980px;

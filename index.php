@@ -16,7 +16,7 @@ require('lib/header.php');
     console.error('fetching chatroom #' + topic);
     if (topic = 'devin') {
       GET('/chatroom.php?topic=' + topic, function(resp) {
-        console.error('got response on ');
+        console.error('got response on ' + topic);
         doc.body.innerHTML = resp;
       });
     } else {
