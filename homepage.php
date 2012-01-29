@@ -36,9 +36,6 @@
   }
   
   html {
-    background-color: rgb(51, 82, 127);
-    background: -moz-radial-gradient(circle, white, rgb(51, 82, 127));
-    background: -webkit-radial-gradient(circle, white, rgb(51, 82, 127));
     height: 100%; /*height 100% so the gradient circle isn't weird*/
     
     -moz-font-smoothing:antialiased !important;
@@ -124,7 +121,7 @@
   
 </script>
 <h1 id="title">Welcome to Chirpd.it!</h1>
-<h2>Go, GO NOW! &nbsp;Chat on: <a href="http://chirpd.it/#SWSJ">#SWSJ</a></h2>
+<h2>Go, GO NOW! &nbsp;Chat on: <a href="<?php curPageUrl(); ?>/#SWSJ">#SWSJ</a></h2>
 
 <div id="liveChats">
   <ul id="chatRoomList">
