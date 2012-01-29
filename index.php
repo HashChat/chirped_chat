@@ -13,11 +13,15 @@ require('lib/header.php');
   window.topic = 'no-topic'; //default
   if (url.indexOf('/#') > 0) {
     topic = url.substr(url.indexOf('/#') + 2, url.length);
+    console.error('fetching chatroom #' + topic);
     GET('/chatroom.php?topic=' + topic, function(resp) {
+      console.error('got response on ');
       doc.body.innerHTML = resp;
     });
   } else {
-    GET('/homepage.php' + topic, function(resp) {
+    console.error('fetching homepage!');
+    GET('/homepage.php', function(resp) {
+      console.error('homepage rolling in!');
       doc.body.innerHTML = resp;
     });
   }
