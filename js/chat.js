@@ -1036,6 +1036,7 @@ var ajaxChat = {
 
 	toggleUserMenu: function(menuID, userName, userID) {
 		// If the menu is empty, fill it with user node menu items before toggling it. 
+return;
 		var isInline = false;
 		if (menuID.indexOf('ium') >= 0 ) {
 			isInline = true;

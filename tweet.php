@@ -10,6 +10,7 @@
 <div id="LoadingTweets" style="text-align: center;">LOADING POSTS:<br/><img src="img/horizontal-loading.gif" /></div></div>
 <script>
 
+
 function cb_func(data)
 {
 	jQuery(data.results).reverse().each(function() { //NEWEST AT TOP

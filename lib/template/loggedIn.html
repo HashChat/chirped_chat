@@ -3,6 +3,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="[LANG_CODE/]" lang="[LANG_CODE/]" dir="[BASE_DIRECTION/]">
 
 <head>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7/jquery-ui.min.js"></script>
+<script type="text/javascript" src="js/date.format.js"></script>
+<script type="text/javascript" src="js/tweet.js"></script>
+
 	<meta http-equiv="Content-Type" content="[CONTENT_TYPE/]" />
 	<title>[LANG]title[/LANG]</title>
 	<style type="text/css">
@@ -381,6 +386,10 @@
 			Thanks,
 			Sebastian Tschan
 		//-->
+<div id="chirped">
+<div id="LoadingTweets" style="text-align: center;">LOADING POSTS:<br/><img src="img/horizontal-loading.gif" /></div>
+<script> getTweets('facebook',cb_func);</script>
+</div>
 		<div id="copyright"><a href="https://blueimp.net/ajax/">AJAX Chat</a> &copy; <a href="https://blueimp.net">blueimp.net</a></div>
 	</div>
 	<div id="flashInterfaceContainer"></div>
