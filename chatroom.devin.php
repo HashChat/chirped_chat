@@ -68,17 +68,16 @@ for($count = 0; $count < 30; $count++) { //30 is arbitrary, plenty to fill the "
       <span class="leftDivTitle">In this chatroom <a id="inviteMore">invite more</a></span>
       <div id="memberThumbnails">
         
-        <div id="">
-          <span class="memberThumbnailSpan">
-            <img class="memberThumbnail" src="http://thescoutapp.com/X/DevinThumbnail.png" />
-          </span>
+        <div class="row">
+        
+          <?php for ($c = 0; $c < 12; $c++) { ?>
+            <?php if ($c == 6) {echo '</div><div class="row">';} ?>
+            <span class="memberThumbnailSpan">
+              <img class="memberThumbnail" src="http://thescoutapp.com/X/DevinThumbnail.jpg" />
+            </span>
+          <?php } ?>
         </div>
         
-        <div id="">
-          <span class="memberThumbnailSpan">
-            <img class="memberThumbnail" src="http://thescoutapp.com/X/DevinThumbnail.png" />
-          </span>
-        </div>        
         
       </div>
       
