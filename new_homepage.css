@@ -1,0 +1,239 @@
+body {
+  background: #353535;
+  background-image: url("images/backgroundTexture.png");
+  background-repeat: repeat-both;
+  color: white;
+}
+
+div#header {
+  float: left;
+  display: block;
+  width: 100%;
+  height: 75px;
+  line-height: 75px;
+  background: #353535;
+  min-width: 800px;
+  background-image: url("images/headerTexture.png");
+  background-repeat: repeat-x;
+}
+
+.emph {
+  color: #55A9EB;
+}
+
+.container {
+  width: 750px;
+  margin: 0 auto;
+}
+
+#rooms {
+  font-size: 20pt;
+  margin-bottom: .5em;
+}
+
+#giant_hash {
+  -moz-border-top-left-radius: 7px;
+  border-top-left-radius: 7px;
+  -moz-border-bottom-left-radius: 7px;
+  border-bottom-left-radius: 7px;
+
+  float: left;
+  margin-bottom: .5em;
+  font-size: 40pt; 
+  background: #E6E6E6; 
+  display: block; 
+  height: 100%; 
+  color: #4D4D4D;
+  padding-left: 7px;
+  padding-right: 5px;
+}
+
+#launcher_search {
+  line-height: 60px;
+  height: 60px;
+}
+ 
+#trending {
+  clear: both;
+}
+
+#header div {
+  display: block;
+  float: left;
+}
+
+#header_spacer {
+  width: 10px;
+  height: 100%;
+
+  border-left: solid 1px black;
+  border-right: solid 1px black;
+
+  background: #279ff4; /* Old browsers */
+  background: -moz-linear-gradient(top,  #279ff4 0%, #7dbeec 20%, #279ff4 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#279ff4), color-stop(20%,#7dbeec), color-stop(100%,#279ff4)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #279ff4 0%,#7dbeec 20%,#279ff4 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #279ff4 0%,#7dbeec 20%,#279ff4 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #279ff4 0%,#7dbeec 20%,#279ff4 100%); /* IE10+ */
+  background: linear-gradient(top,  #279ff4 0%,#7dbeec 20%,#279ff4 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#279ff4', endColorstr='#279ff4',GradientType=0 ); /* IE6-9 */
+
+}
+
+#header_left {
+  margin-left: .2em;
+  margin-right: .2em;
+  font-size: 30pt;
+}
+
+#header_right {
+  left: 0px;
+}
+
+#defintion_blurb {
+  margin-top: .6em;
+  padding-top: 1em;
+}
+
+#defintion_blurb div {
+  margin-top: .5em;
+  display: table-column;
+  line-height: 1em;
+  clear: both;
+}
+
+#definition_blurb_top {
+  font-weight: bold;
+}
+
+div#main {
+  display: block;
+  width: 100%;
+}
+
+div#launcher {
+  width: 100%;
+}
+
+input#launcher_button {
+  -moz-border-top-right-radius: 7px;
+  border-top-right-radius: 7px;
+  -moz-border-bottom-right-radius: 7px;
+  border-bottom-right-radius: 7px;
+
+  border: none;
+  color: white;
+  line-height: 60px;
+  padding-right: 1em;
+  padding-left: 1em;
+  background: #55A9EB;
+  float: left;
+  height: 60px;
+  font-size: 20pt;
+}
+
+input.searchbox {
+  float:left;
+  height: 60px;
+  font-size: 30pt;
+  margin-top: 0px;
+  padding-left: .1em;
+}
+
+div#log_in_button {
+  -moz-border-radius: 7px;
+  border-radius: 7px;
+  margin-right: 3em;
+  margin-top: 1.5em;
+  margin-bottom: .5em;
+  line-height: 30px;
+  padding: .5em;
+  padding-right: 1em;
+  padding-left: 1em;
+  background: #55A9EB;
+  float: right;
+}
+
+div#trending {
+  -moz-border-radius: 7px;
+  border-radius: 7px;
+
+  width: 100%;
+  height: 70%;
+  background: white;
+  margin-bottom: 2em;
+}
+
+div#trending_hash_line {
+  line-height: 60px;
+  height: 60px;
+  border-bottom: 1px solid gray;
+}
+
+div#trending_hash {
+  font-size: 30pt;
+  padding-left: .25em;
+  float:left;
+}
+
+div#trending_next {
+  -moz-border-top-right-radius: 7px;
+  border-top-right-radius: 7px;
+
+  font-size: 20pt;
+  color: gray;
+  background: DarkGray;
+  float: right;
+  padding-left: .95em;
+  padding-right: .95em;
+}
+
+div#trending_view {
+  -moz-border-bottom-right-radius: 7px;
+  border-bottom-right-radius: 7px;
+  -moz-border-bottom-left-radius: 7px;
+  border-bottom-left-radius: 7px;
+
+  clear: both;
+  background: #EFEFEF;
+  padding-bottom: .5em;
+}
+
+div#trending_tweets {
+  min-height: 20em;
+  height: 72%;
+}
+
+textarea#trending_chirp_text {
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  margin-left: 2.5%;
+  width: 95%;
+  height: 4em;
+  resize: none;
+}
+
+#trending_chirp_stats {
+  margin-left:80%;
+  color: #808080;
+  font-size: 20pt;
+  line-height: 30px;
+}
+
+#trending_chirp_button {
+  float: right;
+  margin-right: 12.5%;
+}
+
+#trending_chirp_button input {
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+
+  height: 30px;
+  font-size: 15pt;
+  color: #808080;
+  border-color: #BBBBBB;
+  border-style: solid;
+  border-width: 1px;
+}
+
