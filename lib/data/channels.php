@@ -5,7 +5,7 @@
  * @copyright (c) Sebastian Tschan
  * @license GNU Affero General Public License
  * @link https://blueimp.net/ajax/
- */
+ */ 
 
 $con = mysql_connect('thefacephone.ce6ojopwii3x.us-east-1.rds.amazonaws.com','chirped','Chirped123!');
 mysql_select_db('chirped',$con);

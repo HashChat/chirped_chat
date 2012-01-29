@@ -7,6 +7,48 @@
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7/jquery-ui.min.js"></script>
 <script type="text/javascript" src="js/date.format.js"></script>
 <script type="text/javascript" src="js/tweet.js"></script>
+<script>
+
+
+function cb_func(data)
+{
+	
+	jQuery.fn.reverse=Array.prototype.reverse;
+	
+	jQuery(data.results).reverse().each(function() { 
+    		  
+				  if(jQuery('#'+this.id_str).length==0)
+				  { 
+				   
+				  	var posted= new Date(this.created_at); 
+					 
+					 var tweet=get_format(this);
+					 
+					var elem=jQuery("#chirped");
+    		        elem.prepend(tweet);
+					
+					if (this.text.RTs()) {
+    		        	jQuery('#'+this.id_str).addClass("RT");
+						if ($('#blockRTs').is(':checked')) {
+	    		        	jQuery('#'+this.id_str).addClass("blockedTweet");
+						}
+					}
+
+					//SHOW THE TWEET TO THE WORLD
+    		        jQuery('#'+this.id_str).hide();
+    		        jQuery('#'+this.id_str+':not(".blockedTweet")').slideDown(1000);
+					//jQuery('#'+this.id_str+':not(".blockedTweet")').animate({"height": "show", "opacity": "show"}, 1500);
+					
+    		       
+				  }
+					  
+					
+    		  
+    		});
+			jQuery("#LoadingTweets").remove();}
+        
+    </script>
+
 
 	<meta http-equiv="Content-Type" content="[CONTENT_TYPE/]" />
 	<title>[LANG]title[/LANG]</title>
@@ -388,7 +430,9 @@
 		//-->
 <div id="chirped">
 <div id="LoadingTweets" style="text-align: center;">LOADING POSTS:<br/><img src="img/horizontal-loading.gif" /></div>
-<script> getTweets('facebook',cb_func);</script>
+<script> getTweets([TWT]keyword[/TWT],cb_func);</script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+
 </div>
 		<div id="copyright"><a href="https://blueimp.net/ajax/">AJAX Chat</a> &copy; <a href="https://blueimp.net">blueimp.net</a></div>
 	</div>

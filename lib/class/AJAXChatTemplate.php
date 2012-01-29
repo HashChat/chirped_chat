@@ -60,6 +60,9 @@ class AJAXChatTemplate {
 			case 'AJAX_CHAT_URL':
 				return $this->ajaxChat->htmlEncode($this->ajaxChat->getChatURL());
 
+			case 'TWT':		
+				return $this->ajaxChat->htmlEncode('"'.$_REQUEST["channelName"].'"');				
+
 			case 'LANG':
 				return $this->ajaxChat->htmlEncode($this->ajaxChat->getLang($tagContent));				
 			case 'LANG_CODE':

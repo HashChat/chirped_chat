@@ -56,7 +56,7 @@ class AJAXChat {
 		// Initialize custom configuration settings:
 		$this->initCustomConfig();
 	}
-	
+	 
 	function initRequestVars() {
 		$this->_requestVars = array();
 		$this->_requestVars['ajax']			= isset($_REQUEST['ajax'])			? true							: false;

@@ -4,9 +4,12 @@
 $con = mysql_connect('thefacephone.ce6ojopwii3x.us-east-1.rds.amazonaws.com','chirped','Chirped123!');
 mysql_select_db('chirped',$con);
 
-$hashtag123="wellcome3";
-$twitter_username='user'.rand(0,100000000).'';
 
+$twitter_username='user'.rand(0,100000000).'';
+ 
+$topic=$_GET['topic'];
+
+$hashtag123=$topic;
 
 $_REQUEST["userName"]=$twitter_username;
 $_REQUEST["password"]="";
