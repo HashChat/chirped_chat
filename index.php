@@ -14,10 +14,17 @@ require('lib/header.php');
   if (url.indexOf('/#') > 0) {
     topic = url.substr(url.indexOf('/#') + 2, url.length);
     console.error('fetching chatroom #' + topic);
-    GET('/chatroom.php?topic=' + topic, function(resp) {
-      console.error('got response on ');
-      doc.body.innerHTML = resp;
-    });
+    if (topic = 'devin') {
+      GET('/chatroom.php?topic=' + topic, function(resp) {
+        console.error('got response on ');
+        doc.body.innerHTML = resp;
+      });
+    } else {
+      GET('/chatroom.devin.php?topic=' + topic, function(resp) {
+        console.error('got response on ');
+        doc.body.innerHTML = resp;
+      });
+    }
   } else {
     console.error('fetching homepage!');
     GET('/homepage.php', function(resp) {
@@ -27,8 +34,16 @@ require('lib/header.php');
   }
 </script>
 </head>
+<span></span>
 <body>
-  <h1 style="margin-top:60px;">Loading some awesomeness…</h1>
+  <h1 id="message" style="margin-top:60px;"></h1>
+  <script type="text/javascript">
+    if (topic = 'no-topic') {
+      d.id('message').innerText = 'loading an awesome homepage...';
+    } else {
+      d.id('message').innerText = 'loading an awesome chat on #' + topic;
+    }
+  </script>
   <!-- body needs to be replaced with.. either the chatroom or the homepage.. -->
 </body>
 </html>
